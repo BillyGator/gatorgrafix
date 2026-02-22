@@ -134,19 +134,27 @@ const Home = () => {
     });
 
     // Why us animation
-    gsap.from('.why-card', {
-      scrollTrigger: {
-        trigger: '.why-section',
-        start: 'top 70%',
-        toggleActions: 'play none none reverse'
+    gsap.fromTo('.why-card',
+      {
+        y: 60,
+        opacity: 0,
+        rotateY: -15
       },
-      y: 60,
-      opacity: 0,
-      rotateY: -15,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power2.out'
-    });
+      {
+        scrollTrigger: {
+          trigger: '.why-section',
+          start: 'top 70%',
+          toggleActions: 'play none none reverse'
+        },
+        y: 0,
+        opacity: 1,
+        rotateY: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out',
+        clearProps: 'all'
+      }
+    );
 
     // Parallax effect for the Why section background pattern
     gsap.to('.why-bg-pattern', {
