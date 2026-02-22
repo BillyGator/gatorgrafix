@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Phone, Check, CreditCard, Star, Clock, Palette } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +48,11 @@ const BusinessCards = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Business Cards & Marketing Materials Pensacola FL – Gator Grafix</title>
+        <meta name="description" content="Professional business cards, flyers, brochures, decals & stickers in Pensacola, FL. Standard cards from $25. Fast 2-3 day turnaround. Custom design available. Call (850) 478-0486." />
+        <link rel="canonical" href="https://signgator.com/services/business-cards" />
+      </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-blue-500 to-blue-700 py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -64,18 +70,18 @@ const BusinessCards = () => {
                 Business Cards & More
               </h1>
               <p className="text-xl text-white font-bold mb-8">
-                Make a lasting impression with professionally designed and printed business cards, 
+                Make a lasting impression with professionally designed and printed business cards,
                 marketing materials, and promotional products.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
+                <Link
                   to="/contact"
                   className="gator-btn inline-flex items-center justify-center gap-2 bg-gator-yellow text-black border-black"
                 >
                   Get a Free Quote
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a 
+                <a
                   href="tel:8504780486"
                   className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#FFF212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                 >
@@ -85,8 +91,8 @@ const BusinessCards = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/Daphne-Gator-B-Cards.webp" 
+              <img
+                src="/Daphne-Gator-B-Cards.webp"
                 alt="Business Cards - Gator Grafix"
                 className="w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
@@ -104,7 +110,7 @@ const BusinessCards = () => {
             <div className="animate-in">
               <h2 className="section-title text-blue-500 mb-6">Marketing Materials</h2>
               <p className="text-lg text-gray-700 mb-8">
-                From business cards to brochures, we provide high-quality printing for all your 
+                From business cards to brochures, we provide high-quality printing for all your
                 marketing needs. Enhance your brand with professional materials that make an impact.
               </p>
 
@@ -119,7 +125,7 @@ const BusinessCards = () => {
                 ))}
               </div>
 
-              <Link 
+              <Link
                 to="/contact"
                 className="gator-btn inline-flex items-center gap-2"
               >
@@ -130,8 +136,8 @@ const BusinessCards = () => {
 
             {/* Right - Image */}
             <div className="animate-in">
-              <img 
-                src="/daphne-gator-custom-graphic-design-logo-services.webp" 
+              <img
+                src="/daphne-gator-custom-graphic-design-logo-services.webp"
                 alt="Design Services - Gator Grafix"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#3B82F6]"
                 loading="lazy"
@@ -196,9 +202,9 @@ const BusinessCards = () => {
       {/* CTA */}
       <section className="py-16 gator-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <img 
-            src="/Billy and Daphne Gator holding Wrap tools.webp" 
-            alt="Gator Grafix Mascots" 
+          <img
+            src="/Billy and Daphne Gator holding Wrap tools.webp"
+            alt="Gator Grafix Mascots"
             className="h-44 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)] rounded-2xl"
             loading="lazy"
           />
@@ -209,14 +215,14 @@ const BusinessCards = () => {
             Contact us today for a free quote on business cards and marketing materials!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               to="/contact"
               className="gator-btn inline-flex items-center justify-center gap-2"
             >
               Get a Free Quote
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a 
+            <a
               href="tel:8504780486"
               className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#45B653] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
             >

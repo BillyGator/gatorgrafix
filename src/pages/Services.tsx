@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Phone, Car, Signpost, Shirt, CreditCard, Sticker, FileText } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,6 +93,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Our Services | Vehicle Wraps, Signs, Apparel & More – Gator Grafix</title>
+        <meta name="description" content="Gator Grafix offers vehicle wraps, custom signs & banners, DTF t-shirt printing, and business cards in Pensacola, FL. Guaranteed lowest prices on the Gulf Coast!" />
+        <link rel="canonical" href="https://signgator.com/services" />
+      </Helmet>
       {/* Hero */}
       <section className="bg-gator-green py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -107,7 +113,7 @@ const Services = () => {
             Our Services
           </h1>
           <p className="text-xl text-white font-bold max-w-2xl mx-auto">
-            From wraps to shirts, if you can imagine it, we can print it! 
+            From wraps to shirts, if you can imagine it, we can print it!
             Check out all the amazing services we offer at Gator Grafix.
           </p>
         </div>
@@ -118,15 +124,15 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {allServices.map((service, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`service-item grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Image Side */}
                 <div className={`relative ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className={`${service.color} rounded-2xl p-2 border-3 border-black shadow-[8px_8px_0_#000]`}>
-                    <img 
-                      src={service.mascot} 
+                    <img
+                      src={service.mascot}
                       alt={`${service.title} - Gator Grafix Service`}
                       className="w-full h-72 object-contain bg-white rounded-xl"
                       loading="lazy"
@@ -142,7 +148,7 @@ const Services = () => {
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <h2 className="font-display text-3xl md:text-4xl uppercase text-black mb-4">{service.title}</h2>
                   <p className="text-lg text-gray-700 mb-6">{service.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-3 mb-8">
                     {service.features.map((feature, fIndex) => (
                       <div key={fIndex} className="flex items-center gap-2">
@@ -152,7 +158,7 @@ const Services = () => {
                     ))}
                   </div>
 
-                  <Link 
+                  <Link
                     to={service.link}
                     className="gator-btn inline-flex items-center gap-2 group"
                   >
@@ -198,14 +204,14 @@ const Services = () => {
             Give us a call and we'll help you figure out the best solution for your project!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               to="/contact"
               className="gator-btn inline-flex items-center justify-center gap-2"
             >
               Get a Free Quote
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a 
+            <a
               href="tel:8504780486"
               className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#FFF212] hover:shadow-[8px_8px_0_#45B653] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
             >

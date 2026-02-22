@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Phone, Award, Users, Clock, Heart } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,6 +72,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>About Us | Gator Grafix – Family Owned Sign Shop Since 2005</title>
+        <meta name="description" content="Learn about Gator Grafix, Pensacola's most fun sign shop. Family owned & operated since 2005 by Billy & Daphne Gator. 20+ years of experience, 10,000+ happy customers." />
+        <link rel="canonical" href="https://signgator.com/about" />
+      </Helmet>
       {/* Hero */}
       <section className="bg-gator-yellow py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
@@ -88,18 +94,18 @@ const About = () => {
                 The Gator Grafix Family
               </h1>
               <p className="text-xl text-black font-bold mb-8">
-                Founded in 2005, Gator Grafix is a proud family-owned business rooted in Pensacola, Florida. 
+                Founded in 2005, Gator Grafix is a proud family-owned business rooted in Pensacola, Florida.
                 Our commitment to quality and customer satisfaction has made us the go-to sign shop on the Gulf Coast.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
+                <Link
                   to="/contact"
                   className="gator-btn inline-flex items-center justify-center gap-2"
                 >
                   Work With Us
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a 
+                <a
                   href="tel:8504780486"
                   className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#C90010] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                 >
@@ -109,8 +115,8 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/Billy & Daphne Gator In Front of Building.webp" 
+              <img
+                src="/Billy & Daphne Gator In Front of Building.webp"
                 alt="Gator Grafix Building - Pensacola Sign Shop"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#000]"
                 loading="eager"
@@ -144,8 +150,8 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-in">
-              <img 
-                src="/Building Cartoon High Res.webp" 
+              <img
+                src="/Building Cartoon High Res.webp"
                 alt="Gator Grafix Building - Pensacola Location"
                 className="building-parallax w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#45B653]"
                 loading="lazy"
@@ -154,16 +160,16 @@ const About = () => {
             <div className="animate-in">
               <h2 className="section-title text-gator-green mb-6">Who We Are</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Gator Grafix began as a small family dream in 2005. What started as a humble sign shop 
+                Gator Grafix began as a small family dream in 2005. What started as a humble sign shop
                 has grown into one of the most trusted printing companies on the Gulf Coast.
               </p>
               <p className="text-gray-700 mb-6">
-                We take pride in our ability to deliver exceptional products that reflect our clients' visions, 
+                We take pride in our ability to deliver exceptional products that reflect our clients' visions,
                 all while maintaining the personal touch that only a family-operated company can offer.
               </p>
               <p className="text-gray-700 mb-8">
-                Our team of skilled designers and installers are passionate about what they do, and it shows 
-                in every project we complete. From small business cards to full vehicle wraps, we put the same 
+                Our team of skilled designers and installers are passionate about what they do, and it shows
+                in every project we complete. From small business cards to full vehicle wraps, we put the same
                 level of care and attention into every job.
               </p>
               <div className="bg-gator-yellow p-6 border-3 border-black rounded-2xl shadow-[6px_6px_0_#000]">
@@ -238,8 +244,8 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-gator-yellow p-8 border-3 border-black rounded-2xl shadow-[8px_8px_0_#000] text-center hover:shadow-[12px_12px_0_#C90010] hover:-translate-x-1 hover:-translate-y-1 transition-all">
-              <img 
-                src="/Gator Grafix Billy Gator 2026.webp" 
+              <img
+                src="/Gator Grafix Billy Gator 2026.webp"
                 alt="Billy Gator - Gator Grafix Mascot"
                 className="h-44 mx-auto mb-4"
                 loading="lazy"
@@ -248,8 +254,8 @@ const About = () => {
               <p className="text-gray-700">The boss gator who makes sure every job is done right!</p>
             </div>
             <div className="bg-gator-green p-8 border-3 border-black rounded-2xl shadow-[8px_8px_0_#000] text-center hover:shadow-[12px_12px_0_#FFF212] hover:-translate-x-1 hover:-translate-y-1 transition-all">
-              <img 
-                src="/Daphne Gator New 2026.webp" 
+              <img
+                src="/Daphne Gator New 2026.webp"
                 alt="Daphne Gator - Gator Grafix Mascot"
                 className="h-44 mx-auto mb-4"
                 loading="lazy"
@@ -264,9 +270,9 @@ const About = () => {
       {/* CTA */}
       <section className="py-16 gator-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <img 
-            src="/GatorLowestPrices.webp" 
-            alt="Lowest Prices Guaranteed - Gator Grafix" 
+          <img
+            src="/GatorLowestPrices.webp"
+            alt="Lowest Prices Guaranteed - Gator Grafix"
             className="h-40 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
           />
@@ -277,14 +283,14 @@ const About = () => {
             We'd love to work with you on your next project!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               to="/contact"
               className="gator-btn inline-flex items-center justify-center gap-2"
             >
               Get a Free Quote
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a 
+            <a
               href="tel:8504780486"
               className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#45B653] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
             >

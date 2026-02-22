@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Phone, Check, Star, Clock, Shield, ChevronDown } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,6 +98,11 @@ const VehicleWraps = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Vehicle Wraps Pensacola FL | Full & Partial Wraps – Gator Grafix</title>
+        <meta name="description" content="Professional vehicle wraps in Pensacola, FL. Full wraps, partial wraps, fleet graphics & color change wraps. 3M & Avery materials. 1-year warranty. Free quote: (850) 478-0486." />
+        <link rel="canonical" href="https://signgator.com/services/vehicle-wraps" />
+      </Helmet>
       {/* Hero */}
       <section className="hero-section bg-gradient-to-br from-gator-red to-red-700 py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">

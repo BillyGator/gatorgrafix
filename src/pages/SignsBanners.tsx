@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Phone, Check, Star, Clock, Ruler } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +48,11 @@ const SignsBanners = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Custom Signs & Banners Pensacola FL | Yard Signs, Vinyl – Gator Grafix</title>
+        <meta name="description" content="Custom signs & banners in Pensacola, FL. Yard signs, vinyl banners, lighted signs, magnetic signs & full-color graphics. Fast turnaround. Lowest prices guaranteed!" />
+        <link rel="canonical" href="https://signgator.com/services/signs-banners" />
+      </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-gator-green to-green-700 py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -64,18 +70,18 @@ const SignsBanners = () => {
                 Signs & Banners
               </h1>
               <p className="text-xl text-white font-bold mb-8">
-                From eye-catching banners to durable signs, we provide custom solutions 
+                From eye-catching banners to durable signs, we provide custom solutions
                 to help your business stand out and get noticed!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
+                <Link
                   to="/contact"
                   className="gator-btn inline-flex items-center justify-center gap-2 bg-gator-yellow text-black border-black"
                 >
                   Get a Free Quote
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a 
+                <a
                   href="tel:8504780486"
                   className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#FFF212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                 >
@@ -85,8 +91,8 @@ const SignsBanners = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/Gator-Banner.webp" 
+              <img
+                src="/Gator-Banner.webp"
                 alt="Signs & Banners - Gator Grafix"
                 className="w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
@@ -104,7 +110,7 @@ const SignsBanners = () => {
             <div className="animate-in">
               <h2 className="section-title text-gator-green mb-6">Custom Signs for Every Need</h2>
               <p className="text-lg text-gray-700 mb-8">
-                Whether you need a single yard sign or a hundred banners for your next event, 
+                Whether you need a single yard sign or a hundred banners for your next event,
                 we've got the equipment and expertise to deliver high-quality results at the lowest prices.
               </p>
 
@@ -119,7 +125,7 @@ const SignsBanners = () => {
                 ))}
               </div>
 
-              <Link 
+              <Link
                 to="/contact"
                 className="gator-btn inline-flex items-center gap-2"
               >
@@ -130,8 +136,8 @@ const SignsBanners = () => {
 
             {/* Right - Image */}
             <div className="animate-in">
-              <img 
-                src="/gator-grafix-custom-sign-design-banner-printing-services.webp" 
+              <img
+                src="/gator-grafix-custom-sign-design-banner-printing-services.webp"
                 alt="Sign Making Process - Gator Grafix"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#45B653]"
                 loading="lazy"
@@ -195,9 +201,9 @@ const SignsBanners = () => {
       {/* CTA */}
       <section className="py-16 gator-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <img 
-            src="/Billy-Gator Standing in front of Building.webp" 
-            alt="Gator Grafix - Pensacola Sign Shop" 
+          <img
+            src="/Billy-Gator Standing in front of Building.webp"
+            alt="Gator Grafix - Pensacola Sign Shop"
             className="h-44 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)] rounded-2xl"
             loading="lazy"
           />
@@ -208,14 +214,14 @@ const SignsBanners = () => {
             Contact us today and let's create something amazing together!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               to="/contact"
               className="gator-btn inline-flex items-center justify-center gap-2"
             >
               Get a Free Quote
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a 
+            <a
               href="tel:8504780486"
               className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#45B653] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
             >

@@ -1,0 +1,101 @@
+# ============================================================
+# Gator Grafix .htaccess — SEO, Caching & Security Config
+# ============================================================
+
+# ---- 1. URL Canonicalization: Force non-www ----------------
+# Redirects www.signgator.com → signgator.com
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ---- 2. Force HTTPS ----------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ---- 3. React Router: Serve index.html for all routes ------
+# Required for client-side routing (prevents 404 on refresh)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# ---- 4. HSTS (Strict-Transport-Security) -------------------
+# Tells browsers to always use HTTPS for 1 year
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# ---- 5. Cache Headers --------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Images — cache for 1 year
+  ExpiresByType image/webp                "access plus 1 year"
+  ExpiresByType image/png                 "access plus 1 year"
+  ExpiresByType image/jpeg                "access plus 1 year"
+  ExpiresByType image/gif                 "access plus 1 year"
+  ExpiresByType image/svg+xml             "access plus 1 year"
+  ExpiresByType image/x-icon              "access plus 1 year"
+
+  # CSS & JavaScript — cache for 1 year (Vite adds hashes to filenames)
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType text/javascript           "access plus 1 year"
+
+  # Fonts — cache for 1 year
+  ExpiresByType font/woff2                "access plus 1 year"
+  ExpiresByType font/woff                 "access plus 1 year"
+  ExpiresByType application/font-woff2   "access plus 1 year"
+
+  # HTML — short cache (always fetch fresh HTML)
+  ExpiresByType text/html                 "access plus 0 seconds"
+</IfModule>
+
+# ---- 6. Cache-Control Headers (complement mod_expires) -----
+<IfModule mod_headers.c>
+  # Long cache for versioned assets (Vite hashes JS/CSS names)
+  <FilesMatch "\.(js|css|webp|png|jpg|jpeg|gif|svg|woff2|woff|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # No cache for HTML
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+</IfModule>
+
+# ---- 7. Enable GZIP Compression ----------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# ---- 8. Security Headers -----------------------------------
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Prevent MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  # XSS Protection
+  Header always set X-XSS-Protection "1; mode=block"
+  # Referrer policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---- 9. Custom 404 (fallback for server-rendered 404) ------
+ErrorDocument 404 /index.html

@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Phone, ArrowRight, Star, Clock, Award, Check, Car, Signpost, Shirt, CreditCard } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -178,6 +179,11 @@ const Home = () => {
 
   return (
     <div ref={container} className="overflow-hidden">
+      <Helmet>
+        <title>Gator Grafix | Signs, Wraps &amp; Apparel – Pensacola, FL</title>
+        <meta name="description" content="Pensacola's most fun sign shop! Guaranteed lowest prices on custom signs, vehicle wraps, DTF t-shirts & business cards. Family owned since 2005. Call (850) 478-0486." />
+        <link rel="canonical" href="https://signgator.com/" />
+      </Helmet>
       {/* Hero Section - Reduced padding */}
       <section ref={heroRef} className="relative min-h-[85vh] gator-gradient overflow-hidden">
         {/* Animated background elements with parallax */}
@@ -406,9 +412,11 @@ const Home = () => {
 
           <div className="parallax-truck mt-4 lg:mt-10 flex justify-center w-full px-4 lg:px-8">
             <img
-              src="/Jeep_Gladiator_GatorGrafix_Jeep_wrap.png"
-              alt="Gator Grafix Jeep Wrap"
+              src="/Jeep_Gladiator_GatorGrafix_Jeep_wrap.webp"
+              alt="Gator Grafix custom Jeep Gladiator full vehicle wrap in Pensacola FL"
               className="w-full max-w-5xl lg:max-w-6xl drop-shadow-[16px_16px_0_rgba(0,0,0,0.8)]"
+              width={1200}
+              height={800}
               loading="lazy"
             />
           </div>

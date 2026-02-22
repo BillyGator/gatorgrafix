@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import EmailProtection from '../components/EmailProtection';
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,6 +111,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contact Gator Grafix | Free Quote – Pensacola Sign Shop</title>
+        <meta name="description" content="Contact Gator Grafix in Pensacola, FL for a free quote on signs, vehicle wraps, t-shirts & more. Call (850) 478-0486, visit us at 8447 Pensacola Blvd, or send us a message online." />
+        <link rel="canonical" href="https://signgator.com/contact" />
+      </Helmet>
       {/* Hero */}
       <section className="bg-gator-green py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">

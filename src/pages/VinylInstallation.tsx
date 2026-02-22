@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Phone, Check, AlertTriangle, Thermometer, Droplets, Sun, Wind } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,6 +100,11 @@ const VinylInstallation = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>How to Install Vinyl Decals & Wraps | Step-by-Step Guide – Gator Grafix</title>
+        <meta name="description" content="Free step-by-step vinyl decal installation guide from Gator Grafix in Pensacola, FL. Learn the tools needed, ideal conditions, and pro tips for a perfect installation." />
+        <link rel="canonical" href="https://signgator.com/vinyl-installation" />
+      </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-gator-green to-green-700 py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -116,18 +122,18 @@ const VinylInstallation = () => {
                 Vinyl Installation Guide
               </h1>
               <p className="text-xl text-white font-bold mb-8">
-                Follow our step-by-step instructions to install your vinyl graphics like a pro! 
+                Follow our step-by-step instructions to install your vinyl graphics like a pro!
                 With the right tools and techniques, you can achieve professional results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
+                <Link
                   to="/contact"
                   className="gator-btn inline-flex items-center justify-center gap-2 bg-gator-yellow text-black border-black"
                 >
                   Need Help? Contact Us
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a 
+                <a
                   href="tel:8504780486"
                   className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#FFF212] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                 >
@@ -137,8 +143,8 @@ const VinylInstallation = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/Billy and Daphne Gator holding Wrap tools.webp" 
+              <img
+                src="/Billy and Daphne Gator holding Wrap tools.webp"
                 alt="Vinyl Installation Tools - Gator Grafix"
                 className="w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
@@ -160,10 +166,10 @@ const VinylInstallation = () => {
               Print this guide or save it to your phone for easy reference during installation!
             </p>
           </div>
-          
+
           <div className="infographic-parallax relative">
-            <img 
-              src="/how-to-install-cut-vinyl-decals-instructions-infographic.webp" 
+            <img
+              src="/how-to-install-cut-vinyl-decals-instructions-infographic.webp"
               alt="How to Install Cut Vinyl Decals - Step by Step Instructions from Gator Grafix"
               className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#000]"
               loading="lazy"
@@ -256,7 +262,7 @@ const VinylInstallation = () => {
                     <div className="bg-white p-6 border-3 border-black rounded-2xl shadow-[8px_8px_0_#45B653]">
                       <h3 className="font-display text-2xl uppercase text-gator-green mb-3">{step.title}</h3>
                       <p className="text-gray-700 mb-4">{step.desc}</p>
-                      
+
                       <div className="bg-gator-yellow/30 p-4 rounded-xl">
                         <p className="font-display text-sm uppercase text-gator-red mb-2">Pro Tips:</p>
                         <ul className="space-y-1">
@@ -280,9 +286,9 @@ const VinylInstallation = () => {
       {/* CTA */}
       <section className="py-16 gator-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <img 
-            src="/Gator Grafix Logo New 2026.webp" 
-            alt="Gator Grafix Logo" 
+          <img
+            src="/Gator Grafix Logo New 2026.webp"
+            alt="Gator Grafix Logo"
             className="h-32 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
           />
@@ -293,14 +299,14 @@ const VinylInstallation = () => {
             Our team is here to help! Give us a call or stop by our shop for assistance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               to="/contact"
               className="gator-btn inline-flex items-center justify-center gap-2"
             >
               Contact Us
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a 
+            <a
               href="tel:8504780486"
               className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#45B653] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
             >

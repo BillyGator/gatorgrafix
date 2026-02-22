@@ -13,6 +13,7 @@ import TShirts from './pages/TShirts';
 import BusinessCards from './pages/BusinessCards';
 import VinylInstallation from './pages/VinylInstallation';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +21,7 @@ function App() {
   useEffect(() => {
     // Smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
-    
+
     // Refresh ScrollTrigger on route change
     return () => {
       ScrollTrigger.refresh();
@@ -40,6 +41,7 @@ function App() {
           <Route path="services/business-cards" element={<BusinessCards />} />
           <Route path="vinyl-installation" element={<VinylInstallation />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

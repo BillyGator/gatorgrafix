@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Phone, Check, Shirt, Star, Clock, Users } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,6 +51,11 @@ const TShirts = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Custom T-Shirts & Apparel Pensacola FL | DTF Printing – Gator Grafix</title>
+        <meta name="description" content="Custom t-shirts & apparel printing in Pensacola, FL. DTF printing, screen printing & heat press. No minimum orders! Fast turnaround. Free quote: (850) 478-0486." />
+        <link rel="canonical" href="https://signgator.com/services/t-shirts" />
+      </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-gator-yellow to-yellow-400 py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -67,18 +73,18 @@ const TShirts = () => {
                 T-Shirts & Apparel
               </h1>
               <p className="text-xl text-black font-bold mb-8">
-                Design your own apparel with our high-quality printing options. 
+                Design your own apparel with our high-quality printing options.
                 Perfect for teams, events, businesses, or personal use. No minimum orders!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
+                <Link
                   to="/contact"
                   className="gator-btn inline-flex items-center justify-center gap-2"
                 >
                   Get a Free Quote
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a 
+                <a
                   href="tel:8504780486"
                   className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#C90010] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                 >
@@ -88,8 +94,8 @@ const TShirts = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/Daphne-Gator-T-Shirt.webp" 
+              <img
+                src="/Daphne-Gator-T-Shirt.webp"
                 alt="Custom T-Shirts - Gator Grafix"
                 className="w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
@@ -105,8 +111,8 @@ const TShirts = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Image */}
             <div className="animate-in">
-              <img 
-                src="/Daphne Gator New 2026.webp" 
+              <img
+                src="/Daphne Gator New 2026.webp"
                 alt="T-Shirt Printing - Gator Grafix"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#FFF212]"
                 loading="lazy"
@@ -117,7 +123,7 @@ const TShirts = () => {
             <div className="animate-in">
               <h2 className="section-title text-gator-yellow mb-6" style={{ WebkitTextStroke: '1px black' }}>Printing Methods</h2>
               <p className="text-lg text-gray-700 mb-8">
-                We offer multiple printing methods to ensure the best results for your design, 
+                We offer multiple printing methods to ensure the best results for your design,
                 quantity, and budget. From single custom shirts to large bulk orders!
               </p>
 
@@ -132,7 +138,7 @@ const TShirts = () => {
                 ))}
               </div>
 
-              <Link 
+              <Link
                 to="/contact"
                 className="gator-btn inline-flex items-center gap-2"
               >
@@ -193,9 +199,9 @@ const TShirts = () => {
       {/* CTA */}
       <section className="py-16 gator-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <img 
-            src="/Gator Grafix Logo New 2026.webp" 
-            alt="Gator Grafix Logo" 
+          <img
+            src="/Gator Grafix Logo New 2026.webp"
+            alt="Gator Grafix Logo"
             className="h-32 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
           />
@@ -206,14 +212,14 @@ const TShirts = () => {
             Contact us today for a free quote on your t-shirt or apparel order!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               to="/contact"
               className="gator-btn inline-flex items-center justify-center gap-2"
             >
               Get a Free Quote
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a 
+            <a
               href="tel:8504780486"
               className="px-8 py-4 font-display text-lg uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#45B653] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
             >
