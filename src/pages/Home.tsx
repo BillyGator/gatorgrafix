@@ -132,54 +132,6 @@ const Home = () => {
       duration: 0.8,
       ease: 'power2.out'
     });
-
-    // Why us animation
-    gsap.fromTo('.why-card',
-      {
-        y: 60,
-        opacity: 0,
-        rotateY: -15
-      },
-      {
-        scrollTrigger: {
-          trigger: '.why-section',
-          start: 'top 70%',
-          toggleActions: 'play none none reverse'
-        },
-        y: 0,
-        opacity: 1,
-        rotateY: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out',
-        clearProps: 'all'
-      }
-    );
-
-    // Parallax effect for the Why section background pattern
-    gsap.to('.why-bg-pattern', {
-      scrollTrigger: {
-        trigger: '.why-section',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1
-      },
-      y: 150,
-      ease: 'none'
-    });
-
-    // Parallax effect for the truck
-    gsap.to('.parallax-truck', {
-      scrollTrigger: {
-        trigger: '.why-section',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1
-      },
-      y: -50,
-      ease: 'none'
-    });
-
   }, { scope: container });
 
   const services = [
