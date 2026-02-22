@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Phone, ArrowRight, Star, Clock, Award, Car, Signpost, Shirt, CreditCard } from 'lucide-react';
+import { Phone, ArrowRight, Star, Clock, Award, Check, Car, Signpost, Shirt, CreditCard } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -207,6 +207,13 @@ const Home = () => {
       image: '/Daphne-Gator-B-Cards-Link.webp',
       color: 'from-blue-500 to-blue-700'
     }
+  ];
+
+  const whyChooseUs = [
+    { icon: Award, title: 'Lowest Prices Guaranteed', desc: 'Best prices on the entire Gulf Coast!' },
+    { icon: Clock, title: 'Fast Turnaround', desc: 'Quick delivery without compromising quality.' },
+    { icon: Star, title: '20+ Years Experience', desc: 'Family owned and operated since 2005.' },
+    { icon: Check, title: '100% Satisfaction', desc: 'We stand behind every product we make.' },
   ];
 
   return (
@@ -444,6 +451,18 @@ const Home = () => {
               className="w-full max-w-5xl lg:max-w-6xl drop-shadow-[16px_16px_0_rgba(0,0,0,0.8)]"
               loading="lazy"
             />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 relative z-20">
+            {whyChooseUs.map((item, index) => (
+              <div key={index} className="why-card bg-white p-6 border-3 border-black rounded-2xl shadow-[8px_8px_0_#45B653] hover:shadow-[12px_12px_0_#C90010] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300">
+                <div className="w-16 h-16 bg-gator-yellow rounded-full border-3 border-black flex items-center justify-center mb-4 mx-auto shadow-[3px_3px_0_#000]">
+                  <item.icon className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="font-display text-xl uppercase text-center mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-center text-sm">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
