@@ -1,14 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Phone, Check, CreditCard, Star, Clock, Palette } from 'lucide-react';
+import { ArrowRight, Phone, Check, CreditCard, Star, Clock, Palette, ChevronDown } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const BusinessCards = () => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -46,12 +47,48 @@ const BusinessCards = () => {
     { title: 'Specialty Cards', desc: 'Raised foil, spot UV, or rounded corners', price: 'Starting at $50' },
   ];
 
+  const faqs = [
+    {
+      question: "How much do business cards cost at Gator Grafix?",
+      answer: "Standard 14pt gloss or matte business cards start at just $25. Premium 16pt with UV coating start at $35, and specialty cards with raised foil, spot UV, or rounded corners start at $50. Contact us for a custom quote on your order."
+    },
+    {
+      question: "How fast can I get my business cards?",
+      answer: "Most business card orders are ready in 2-3 business days. Rush turnaround is sometimes available — call us at (850) 478-0486 and we'll see what we can do for your deadline."
+    },
+    {
+      question: "Do you offer custom design for business cards?",
+      answer: "Yes! Our in-house design team can create a professional business card design from scratch, matching your brand colors and style. We provide a digital proof for your approval before printing."
+    },
+    {
+      question: "What file format should I submit for my design?",
+      answer: "We accept PDF, AI, EPS, PSD, and high-resolution PNG or JPEG files (300 DPI or higher). If you're unsure whether your file will work, just send it over and we'll let you know."
+    },
+    {
+      question: "Do you print other marketing materials besides business cards?",
+      answer: "Absolutely! We print flyers, brochures, door hangers, postcards, custom decals, vinyl stickers, and more. If you need something specific, just ask — chances are we can print it!"
+    },
+    {
+      question: "What finish options are available for business cards?",
+      answer: "We offer gloss, matte, UV coating, raised foil, spot UV, and rounded corner options. Each finish gives your card a different look and feel. Ask us for samples if you'd like to see them in person!"
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Helmet>
         <title>Business Cards & Marketing Materials Pensacola FL – Gator Grafix</title>
         <meta name="description" content="Professional business cards, flyers, brochures, decals & stickers in Pensacola, FL. Standard cards from $25. Fast 2-3 day turnaround. Custom design available. Call (850) 478-0486." />
         <link rel="canonical" href="https://signgator.com/services/business-cards" />
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+          }))
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-blue-500 to-blue-700 py-16 relative overflow-hidden">
@@ -193,6 +230,35 @@ const BusinessCards = () => {
                 </div>
                 <h3 className="font-display text-xl uppercase text-white mb-2">{item.title}</h3>
                 <p className="text-white/80">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-blue-500 text-white px-4 py-2 font-display text-sm uppercase mb-4 border-3 border-black rounded-xl shadow-[4px_4px_0_#000]">Got Questions?</span>
+            <h2 className="section-title text-blue-500 mb-4">Business Card FAQs</h2>
+            <p className="text-lg text-gray-700 font-bold">Everything you need to know about our printing services</p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border-3 border-black rounded-2xl overflow-hidden shadow-[6px_6px_0_#000] transition-all hover:shadow-[8px_8px_0_#3B82F6]">
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-5 bg-white hover:bg-blue-50 transition-colors text-left"
+                >
+                  <span className="font-display text-lg uppercase pr-4">{faq.question}</span>
+                  <ChevronDown className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className="p-5 pt-0 bg-white border-t-2 border-gray-100">
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

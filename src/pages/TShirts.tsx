@@ -1,14 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Phone, Check, Shirt, Star, Clock, Users } from 'lucide-react';
+import { ArrowRight, Phone, Check, Shirt, Star, Clock, Users, ChevronDown } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const TShirts = () => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -49,12 +50,48 @@ const TShirts = () => {
     'Tote Bags'
   ];
 
+  const faqs = [
+    {
+      question: "What is DTF printing and why is it better than screen printing?",
+      answer: "DTF (Direct to Film) printing transfers a full-color design directly onto the fabric using a heat press. Unlike screen printing, DTF has no minimum order requirement, supports unlimited colors at no extra cost, and works great on dark fabrics. It's perfect for small runs and complex designs."
+    },
+    {
+      question: "Is there a minimum order for custom t-shirts?",
+      answer: "No! We have no minimum order requirement. You can order just one shirt or a thousand. Larger orders do receive bulk discounts, so contact us for a quote on larger quantities."
+    },
+    {
+      question: "How long does it take to get custom shirts made?",
+      answer: "Most orders are ready in 3-5 business days. Rush orders are sometimes available — give us a call at (850) 478-0486 and we'll do our best to turn it around faster for you."
+    },
+    {
+      question: "What types of garments can you print on?",
+      answer: "We can print on t-shirts, hoodies, sweatshirts, tank tops, long sleeves, polo shirts, hats, tote bags, aprons, and more. If you have a specific garment in mind, just ask!"
+    },
+    {
+      question: "Can I bring in my own shirt to be printed?",
+      answer: "Yes! You're welcome to bring in your own blank garments. Just make sure they're clean, wrinkle-free, and made of a printable fabric (100% cotton or cotton/poly blends work best). We'll handle the rest."
+    },
+    {
+      question: "Do you do design work for apparel?",
+      answer: "Absolutely! Our in-house design team can create a custom design from scratch or refine your existing artwork. We provide a digital proof before printing so you can approve the final look."
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Helmet>
         <title>Custom T-Shirts & Apparel Pensacola FL | DTF Printing – Gator Grafix</title>
         <meta name="description" content="Custom t-shirts & apparel printing in Pensacola, FL. DTF printing, screen printing & heat press. No minimum orders! Fast turnaround. Free quote: (850) 478-0486." />
         <link rel="canonical" href="https://signgator.com/services/t-shirts" />
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+          }))
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-gator-yellow to-yellow-400 py-16 relative overflow-hidden">
@@ -190,6 +227,35 @@ const TShirts = () => {
                 </div>
                 <h3 className="font-display text-xl uppercase mb-2">{item.title}</h3>
                 <p className="text-gray-700">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-gator-yellow text-black px-4 py-2 font-display text-sm uppercase mb-4 border-3 border-black rounded-xl shadow-[4px_4px_0_#000]">Got Questions?</span>
+            <h2 className="section-title text-gator-red mb-4">T-Shirt & Apparel FAQs</h2>
+            <p className="text-lg text-gray-700 font-bold">Everything you need to know about our apparel printing</p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border-3 border-black rounded-2xl overflow-hidden shadow-[6px_6px_0_#000] transition-all hover:shadow-[8px_8px_0_#FFF212]">
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-5 bg-white hover:bg-gator-yellow/20 transition-colors text-left"
+                >
+                  <span className="font-display text-lg uppercase pr-4">{faq.question}</span>
+                  <ChevronDown className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className="p-5 pt-0 bg-white border-t-2 border-gray-100">
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

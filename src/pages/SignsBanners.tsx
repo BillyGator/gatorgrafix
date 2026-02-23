@@ -1,14 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Phone, Check, Star, Clock, Ruler } from 'lucide-react';
+import { ArrowRight, Phone, Check, Star, Clock, Ruler, ChevronDown } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SignsBanners = () => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -46,12 +47,48 @@ const SignsBanners = () => {
     { title: 'Custom Graphics', desc: 'Full color designs to make your brand pop', image: '/gator-grafix-custom-sign-design-banner-printing-services.webp' },
   ];
 
+  const faqs = [
+    {
+      question: "How fast can you produce signs and banners?",
+      answer: "Most standard signs and banners are ready in 24-48 hours. Rush orders are often available — give us a call at (850) 478-0486 and we'll do our best to accommodate your timeline."
+    },
+    {
+      question: "What sizes of banners do you offer?",
+      answer: "We print banners in virtually any size, from small 2x4 foot banners up to large 4x20 foot displays and beyond. If you have a specific size requirement, just ask — we can accommodate custom dimensions."
+    },
+    {
+      question: "What materials do you use for outdoor signs?",
+      answer: "For outdoor signs we use durable coroplast (corrugated plastic), aluminum, and PVC boards. Our inks are UV-resistant and weatherproof, ensuring your sign looks great for years even in Florida's sun and rain."
+    },
+    {
+      question: "Do you offer design services for signs?",
+      answer: "Absolutely! Our in-house design team can create a custom sign design from scratch or work with your existing artwork. We'll provide a digital proof before printing so you know exactly what to expect."
+    },
+    {
+      question: "Can you match my brand colors exactly?",
+      answer: "Yes! We use high-resolution full-color printing and can match your brand's Pantone or CMYK colors. Just provide your color specifications and we'll handle the rest."
+    },
+    {
+      question: "Do you offer yard sign installation?",
+      answer: "Yard signs come with wire stakes for easy self-installation. For larger signs and lighted signs, we also offer professional installation services. Contact us for details and pricing."
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Helmet>
         <title>Custom Signs & Banners Pensacola FL | Yard Signs, Vinyl – Gator Grafix</title>
         <meta name="description" content="Custom signs & banners in Pensacola, FL. Yard signs, vinyl banners, lighted signs, magnetic signs & full-color graphics. Fast turnaround. Lowest prices guaranteed!" />
         <link rel="canonical" href="https://signgator.com/services/signs-banners" />
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+          }))
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-gator-green to-green-700 py-16 relative overflow-hidden">
@@ -192,6 +229,35 @@ const SignsBanners = () => {
                 </div>
                 <h3 className="font-display text-xl uppercase text-white mb-2">{item.title}</h3>
                 <p className="text-white/80">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-gator-green text-white px-4 py-2 font-display text-sm uppercase mb-4 border-3 border-black rounded-xl shadow-[4px_4px_0_#000]">Got Questions?</span>
+            <h2 className="section-title text-gator-green mb-4">Signs & Banners FAQs</h2>
+            <p className="text-lg text-gray-700 font-bold">Everything you need to know about our sign and banner services</p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border-3 border-black rounded-2xl overflow-hidden shadow-[6px_6px_0_#000] transition-all hover:shadow-[8px_8px_0_#45B653]">
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-5 bg-white hover:bg-gator-yellow/20 transition-colors text-left"
+                >
+                  <span className="font-display text-lg uppercase pr-4">{faq.question}</span>
+                  <ChevronDown className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${openFaq === index ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className="p-5 pt-0 bg-white border-t-2 border-gray-100">
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

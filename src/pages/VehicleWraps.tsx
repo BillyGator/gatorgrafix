@@ -102,6 +102,18 @@ const VehicleWraps = () => {
         <title>Vehicle Wraps Pensacola FL | Full & Partial Wraps – Gator Grafix</title>
         <meta name="description" content="Professional vehicle wraps in Pensacola, FL. Full wraps, partial wraps, fleet graphics & color change wraps. 3M & Avery materials. 1-year warranty. Free quote: (850) 478-0486." />
         <link rel="canonical" href="https://signgator.com/services/vehicle-wraps" />
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="hero-section bg-gradient-to-br from-gator-red to-red-700 py-16 relative overflow-hidden">
