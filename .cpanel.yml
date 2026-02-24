@@ -4,3 +4,5 @@ deployment:
     - export DEPLOYPATH=/home1/gator1/public_html
     - /bin/cp -R dist/* $DEPLOYPATH
     - /bin/cp dist/.htaccess $DEPLOYPATH/.htaccess
+    - /bin/cp dist/sitemap.xml $DEPLOYPATH/sitemap.xml
+    - /bin/cp dist/robots.txt $DEPLOYPATH/robots.txt
