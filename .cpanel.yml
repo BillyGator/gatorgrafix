@@ -6,3 +6,4 @@ deployment:
     - /bin/cp dist/.htaccess $DEPLOYPATH/.htaccess
     - /bin/cp dist/sitemap.xml $DEPLOYPATH/sitemap.xml
     - /bin/cp dist/robots.txt $DEPLOYPATH/robots.txt
+    - /bin/cp dist/og-share.png $DEPLOYPATH/og-share.png
