@@ -254,6 +254,8 @@ const Home = () => {
                   alt="Billy & Daphne Gator - Gator Grafix Mascots"
                   className="w-full max-w-lg lg:max-w-xl drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)]"
                   loading="eager"
+                  width={600}
+                  height={600}
                 />
                 {/* Floating badges - Rounded */}
                 <div className="absolute -top-4 -left-4 w-20 h-20 bg-gator-yellow border-3 border-black rounded-full flex items-center justify-center animate-bounce shadow-[4px_4px_0_#000]">
@@ -302,6 +304,8 @@ const Home = () => {
                     alt={`${service.title} - Gator Grafix Service`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
+                    width={600}
+                    height={192}
                   />
                 </div>
                 <div className="p-6">
@@ -384,6 +388,8 @@ const Home = () => {
                 alt="Gator Grafix Building in Pensacola"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#000]"
                 loading="lazy"
+                width={800}
+                height={600}
               />
               <div className="absolute -bottom-6 -left-6 bg-gator-red text-white p-4 border-3 border-black rounded-xl shadow-[6px_6px_0_#000]">
                 <div className="font-display text-2xl">8447 Pensacola Blvd</div>
@@ -441,8 +447,9 @@ const Home = () => {
           <img
             src="/GatorLowestPrices.webp"
             alt="Lowest Prices Guaranteed - Gator Grafix"
-            className="h-40 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
+            className="h-40 w-auto mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
+            height={160}
           />
           <h2 className="font-display text-4xl md:text-5xl uppercase text-white drop-shadow-[4px_4px_0_#000] mb-6">
             Ready to Get Started?

@@ -104,6 +104,27 @@ const VinylInstallation = () => {
         <title>How to Install Vinyl Decals & Wraps | Step-by-Step Guide – Gator Grafix</title>
         <meta name="description" content="Free step-by-step vinyl decal installation guide from Gator Grafix in Pensacola, FL. Learn the tools needed, ideal conditions, and pro tips for a perfect installation." />
         <link rel="canonical" href="https://signgator.com/vinyl-installation" />
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Install Vinyl Decals & Graphics",
+          "description": "Step-by-step instructions on how to install cut vinyl decals and graphics from Gator Grafix in Pensacola, FL.",
+          "totalTime": "PT1H",
+          "supply": [
+            { "@type": "HowToSupply", "name": "Squeegee (felt-edged)" },
+            { "@type": "HowToSupply", "name": "Isopropyl Alcohol" },
+            { "@type": "HowToSupply", "name": "Masking tape" },
+            { "@type": "HowToSupply", "name": "Heat gun or hair dryer" }
+          ],
+          "step": [
+            { "@type": "HowToStep", "name": "Prepare the Surface", "text": "Clean the surface with isopropyl alcohol. Remove all dirt, wax, and debris." },
+            { "@type": "HowToStep", "name": "Position the Graphic", "text": "Hold the graphic up to the surface and use masking tape to create a hinge." },
+            { "@type": "HowToStep", "name": "Apply the Graphic", "text": "Remove the backing paper, mist the adhesive side, and lower the graphic into position." },
+            { "@type": "HowToStep", "name": "Squeegee the Graphic", "text": "Starting from the center, push out air bubbles toward the edges with firm strokes." },
+            { "@type": "HowToStep", "name": "Remove Transfer Tape", "text": "Slowly peel back the transfer tape at a 45-degree angle." },
+            { "@type": "HowToStep", "name": "Final Touches", "text": "Use a heat gun to conform vinyl to curves, trim excess, and wipe clean." }
+          ]
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-gator-green to-green-700 py-16 relative overflow-hidden">

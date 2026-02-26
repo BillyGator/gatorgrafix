@@ -97,6 +97,19 @@ const Services = () => {
         <title>Our Services | Vehicle Wraps, Signs, Apparel & More – Gator Grafix</title>
         <meta name="description" content="Gator Grafix offers vehicle wraps, custom signs & banners, DTF t-shirt printing, and business cards in Pensacola, FL. Guaranteed lowest prices on the Gulf Coast!" />
         <link rel="canonical" href="https://signgator.com/services" />
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Gator Grafix Services",
+          "description": "All printing and sign services offered by Gator Grafix in Pensacola, FL",
+          "url": "https://signgator.com/services",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Vehicle Wraps & Graphics", "url": "https://signgator.com/services/vehicle-wraps" },
+            { "@type": "ListItem", "position": 2, "name": "Signs & Banners", "url": "https://signgator.com/services/signs-banners" },
+            { "@type": "ListItem", "position": 3, "name": "T-Shirts & Apparel", "url": "https://signgator.com/services/t-shirts" },
+            { "@type": "ListItem", "position": 4, "name": "Business Cards & Marketing", "url": "https://signgator.com/services/business-cards" }
+          ]
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="bg-gator-green py-16 relative overflow-hidden">

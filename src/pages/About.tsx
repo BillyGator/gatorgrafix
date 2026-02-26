@@ -76,6 +76,27 @@ const About = () => {
         <title>About Us | Gator Grafix – Family Owned Sign Shop Since 2005</title>
         <meta name="description" content="Learn about Gator Grafix, Pensacola's most fun sign shop. Family owned & operated since 2005 by Billy & Daphne Gator. 20+ years of experience, 10,000+ happy customers." />
         <link rel="canonical" href="https://signgator.com/about" />
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About Gator Grafix",
+          "description": "Gator Grafix is a family-owned sign shop in Pensacola, FL. Founded in 2005 by Billy and Daphne Gator, we specialize in vehicle wraps, custom signs, apparel, and business cards.",
+          "url": "https://signgator.com/about",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "Gator Grafix",
+            "foundingDate": "2005",
+            "founders": [{ "@type": "Person", "name": "Billy Gator" }, { "@type": "Person", "name": "Daphne Gator" }],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "8447 Pensacola Blvd",
+              "addressLocality": "Pensacola",
+              "addressRegion": "FL",
+              "postalCode": "32534",
+              "addressCountry": "US"
+            }
+          }
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="bg-gator-yellow py-16 relative overflow-hidden">

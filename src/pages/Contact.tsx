@@ -115,6 +115,31 @@ const Contact = () => {
         <title>Contact Gator Grafix | Free Quote – Pensacola Sign Shop</title>
         <meta name="description" content="Contact Gator Grafix in Pensacola, FL for a free quote on signs, vehicle wraps, t-shirts & more. Call (850) 478-0486, visit us at 8447 Pensacola Blvd, or send us a message online." />
         <link rel="canonical" href="https://signgator.com/contact" />
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Gator Grafix",
+          "description": "Contact Gator Grafix for a free quote on signs, vehicle wraps, t-shirts, and business cards in Pensacola, FL.",
+          "url": "https://signgator.com/contact",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "Gator Grafix",
+            "telephone": "(850) 478-0486",
+            "email": "sales@signgator.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "8447 Pensacola Blvd",
+              "addressLocality": "Pensacola",
+              "addressRegion": "FL",
+              "postalCode": "32534",
+              "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" },
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
+            ]
+          }
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="bg-gator-green py-16 relative overflow-hidden">
