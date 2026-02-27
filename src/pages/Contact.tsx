@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, Check } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -115,6 +116,7 @@ const Contact = () => {
         <title>Contact Gator Grafix | Free Quote – Pensacola Sign Shop</title>
         <meta name="description" content="Contact Gator Grafix in Pensacola, FL for a free quote on signs, vehicle wraps, t-shirts & more. Call (850) 478-0486, visit us at 8447 Pensacola Blvd, or send us a message online." />
         <link rel="canonical" href="https://signgator.com/contact" />
+        <meta name="keywords" content="Contact Gator Grafix, Pensacola, sign shop, free quote, vehicle wraps, signs" />
         <script type="application/ld+json">{`${JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ContactPage",
@@ -153,10 +155,10 @@ const Contact = () => {
             Get In Touch
           </span>
           <h1 className="font-display text-5xl md:text-6xl uppercase text-white drop-shadow-[4px_4px_0_#000] mb-6">
-            Contact Us
+            Contact Gator Grafix
           </h1>
           <p className="text-xl text-white font-bold max-w-2xl mx-auto">
-            Ready to get started? We'd love to hear from you! Reach out for a free quote or just to say hello.
+            Ready to get started with your <Link to="/services" className="underline hover:text-black">custom signs and wraps</Link>? We'd love to hear from you! Reach out for a free quote or just to say hello.
           </p>
         </div>
       </section>
@@ -383,7 +385,7 @@ const Contact = () => {
             <div className="bg-gray-800 h-80 border-3 border-black rounded-2xl shadow-[12px_12px_0_#45B653] flex items-center justify-center relative overflow-hidden">
               <img
                 src="/Building Cartoon High Res.webp"
-                alt="Gator Grafix Location - Pensacola Sign Shop"
+                alt="Cartoon illustration of the Gator Grafix sign shop building on Pensacola Blvd"
                 className="absolute inset-0 w-full h-full object-cover opacity-50"
                 loading="lazy"
               />
@@ -411,7 +413,7 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
             src="/GatorLowestPrices.webp"
-            alt="Lowest Prices Guaranteed - Gator Grafix"
+            alt="Lowest Prices Guaranteed badge from Gator Grafix in Pensacola, FL"
             className="h-40 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
           />

@@ -76,7 +76,7 @@ const Layout = () => {
         </div>
       </div>
 
-      <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
+      <nav aria-label="Main Navigation" className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
         ? 'bg-white/80 backdrop-blur-md shadow-lg border-b-4 border-gator-green'
         : 'bg-gator-yellow border-b-4 border-black'
         }`}>
@@ -86,7 +86,7 @@ const Layout = () => {
             <Link to="/" className="flex items-center">
               <img
                 src="/Gator Grafix Logo New 2026.webp"
-                alt="Gator Grafix - Pensacola Sign Shop"
+                alt="Gator Grafix logo - Family owned custom sign shop in Pensacola, Florida"
                 className="h-16 w-auto hover:scale-105 transition-transform drop-shadow-lg"
                 loading="eager"
               />
@@ -123,7 +123,9 @@ const Layout = () => {
             <button
               className="lg:hidden p-2 border-3 border-black bg-white rounded-xl shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#45B653] transition-all"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label="Toggle mobile menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -132,7 +134,7 @@ const Layout = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-gator-yellow border-t-4 border-black absolute w-full shadow-2xl">
+          <div id="mobile-navigation" className="lg:hidden bg-gator-yellow border-t-4 border-black absolute w-full shadow-2xl">
             <div className="px-4 py-4 space-y-2">
               {navLinks.map((link) => (
                 <Link
@@ -171,7 +173,7 @@ const Layout = () => {
             <div className="lg:col-span-1">
               <img
                 src="/Gator Grafix Logo New 2026.webp"
-                alt="Gator Grafix Logo"
+                alt="Gator Grafix official logo - High-quality vehicle wraps and signs in Pensacola"
                 className="h-24 w-auto mb-4"
                 loading="lazy"
               />

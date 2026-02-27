@@ -6,7 +6,7 @@ const NotFound = () => {
     return (
         <div className="min-h-screen gator-gradient flex items-center justify-center overflow-hidden relative">
             <Helmet>
-                <title>Page Not Found | Gator Grafix</title>
+                <title>404 Error: Page Not Found | Gator Grafix</title>
                 <meta name="robots" content="noindex, nofollow" />
             </Helmet>
 

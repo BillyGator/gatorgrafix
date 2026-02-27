@@ -130,7 +130,7 @@ const SignsBanners = () => {
             <div className="relative">
               <img
                 src="/Gator-Banner.webp"
-                alt="Signs & Banners - Gator Grafix"
+                alt="Custom printed outdoor vinyl banner designed and produced by Gator Grafix"
                 className="w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
               />
@@ -175,7 +175,7 @@ const SignsBanners = () => {
             <div className="animate-in">
               <img
                 src="/gator-grafix-custom-sign-design-banner-printing-services.webp"
-                alt="Sign Making Process - Gator Grafix"
+                alt="Daphne Gator overseeing the custom sign design and banner printing process"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#45B653]"
                 loading="lazy"
               />
@@ -198,7 +198,7 @@ const SignsBanners = () => {
             {bannerTypes.map((item, index) => (
               <div key={index} className="bg-white rounded-2xl overflow-hidden border-3 border-black shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#45B653] hover:-translate-x-1 hover:-translate-y-1 transition-all">
                 <div className="h-48 bg-gator-green flex items-center justify-center p-4 rounded-t-2xl">
-                  <img src={item.image} alt={item.title} className="h-full object-contain" loading="lazy" />
+                  <img src={item.image} alt={`${item.title} - Custom signs and banners in Pensacola`} className="h-full object-contain" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-xl uppercase mb-2">{item.title}</h3>
@@ -269,7 +269,7 @@ const SignsBanners = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
             src="/Billy-Gator Standing in front of Building.webp"
-            alt="Gator Grafix - Pensacola Sign Shop"
+            alt="Billy Gator standing in front of the Gator Grafix sign shop building in Pensacola, Florida"
             className="h-44 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)] rounded-2xl"
             loading="lazy"
           />

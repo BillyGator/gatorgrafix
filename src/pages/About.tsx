@@ -56,7 +56,7 @@ const About = () => {
 
   const timeline = [
     { year: '2005', title: 'Gator Grafix Founded', desc: 'Established in Pensacola, Florida as a small family-owned business dedicated to quality printing services.' },
-    { year: '2007', title: 'Expansion of Services', desc: 'Introduced custom apparel and vehicle wraps, broadening our service offerings.' },
+    { year: '2007', title: 'Expansion of Services', desc: <>Introduced <Link to="/services/t-shirts" className="font-bold hover:text-gator-red underline decoration-2 underline-offset-2">custom apparel</Link> and <Link to="/services/vehicle-wraps" className="font-bold hover:text-gator-red underline decoration-2 underline-offset-2">vehicle wraps</Link>, broadening our service offerings.</> },
     { year: '2008', title: 'New Facility', desc: 'Moved to a larger facility to accommodate advanced printing technology.' },
     { year: '2020', title: 'Digital Transformation', desc: 'Implemented state-of-the-art eco-friendly latex digital printing technology.' },
     { year: '2022', title: 'Direct to Film Printing', desc: 'Added the area\'s first commercial direct to film printer for apparel.' },
@@ -116,7 +116,7 @@ const About = () => {
               </h1>
               <p className="text-xl text-black font-bold mb-8">
                 Founded in 2005, Gator Grafix is a proud family-owned business rooted in Pensacola, Florida.
-                Our commitment to quality and customer satisfaction has made us the go-to sign shop on the Gulf Coast.
+                Our commitment to quality and customer satisfaction has made us the go-to <Link to="/services/signs-banners" className="text-gator-red hover:text-white underline decoration-2 underline-offset-2">sign shop</Link> on the Gulf Coast.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -138,7 +138,7 @@ const About = () => {
             <div className="relative">
               <img
                 src="/Billy & Daphne Gator In Front of Building.webp"
-                alt="Gator Grafix Building - Pensacola Sign Shop"
+                alt="Gator Grafix retail storefront building located on Pensacola Blvd in Pensacola, FL"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#000]"
                 loading="eager"
               />
@@ -173,7 +173,7 @@ const About = () => {
             <div className="animate-in">
               <img
                 src="/Building Cartoon High Res.webp"
-                alt="Gator Grafix Building - Pensacola Location"
+                alt="Cartoon illustration of the Gator Grafix sign shop location in Pensacola, Florida"
                 className="building-parallax w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#45B653]"
                 loading="lazy"
               />
@@ -190,7 +190,7 @@ const About = () => {
               </p>
               <p className="text-gray-700 mb-8">
                 Our team of skilled designers and installers are passionate about what they do, and it shows
-                in every project we complete. From small business cards to full vehicle wraps, we put the same
+                in every project we complete. From small <Link to="/services/business-cards" className="text-gator-green hover:text-black font-bold underline decoration-2 underline-offset-2">business cards</Link> to full <Link to="/services/vehicle-wraps" className="text-gator-green hover:text-black font-bold underline decoration-2 underline-offset-2">vehicle wraps</Link>, we put the same
                 level of care and attention into every job.
               </p>
               <div className="bg-gator-yellow p-6 border-3 border-black rounded-2xl shadow-[6px_6px_0_#000]">
@@ -267,7 +267,7 @@ const About = () => {
             <div className="bg-gator-yellow p-8 border-3 border-black rounded-2xl shadow-[8px_8px_0_#000] text-center hover:shadow-[12px_12px_0_#C90010] hover:-translate-x-1 hover:-translate-y-1 transition-all">
               <img
                 src="/Gator Grafix Billy Gator 2026.webp"
-                alt="Billy Gator - Gator Grafix Mascot"
+                alt="Billy Gator mascot showing the professional service provided by Gator Grafix in Pensacola"
                 className="h-44 mx-auto mb-4"
                 loading="lazy"
               />
@@ -277,7 +277,7 @@ const About = () => {
             <div className="bg-gator-green p-8 border-3 border-black rounded-2xl shadow-[8px_8px_0_#000] text-center hover:shadow-[12px_12px_0_#FFF212] hover:-translate-x-1 hover:-translate-y-1 transition-all">
               <img
                 src="/Daphne Gator New 2026.webp"
-                alt="Daphne Gator - Gator Grafix Mascot"
+                alt="Daphne Gator mascot representing the creative design team at Gator Grafix"
                 className="h-44 mx-auto mb-4"
                 loading="lazy"
               />
@@ -293,7 +293,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
             src="/GatorLowestPrices.webp"
-            alt="Lowest Prices Guaranteed - Gator Grafix"
+            alt="Lowest Prices Guaranteed badge for custom signs and vehicle wraps by Gator Grafix"
             className="h-40 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
           />

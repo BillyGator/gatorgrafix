@@ -94,7 +94,7 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Our Services | Vehicle Wraps, Signs, Apparel & More – Gator Grafix</title>
+        <title>Our Services Pensacola FL | Vehicle Wraps, Signs, Apparel & More – Gator Grafix</title>
         <meta name="description" content="Gator Grafix offers vehicle wraps, custom signs & banners, DTF t-shirt printing, and business cards in Pensacola, FL. Guaranteed lowest prices on the Gulf Coast!" />
         <link rel="canonical" href="https://signgator.com/services" />
         <script type="application/ld+json">{`${JSON.stringify({

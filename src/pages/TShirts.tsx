@@ -133,7 +133,7 @@ const TShirts = () => {
             <div className="relative">
               <img
                 src="/Daphne-Gator-T-Shirt.webp"
-                alt="Custom T-Shirts - Gator Grafix"
+                alt="Daphne Gator showcasing custom printed t-shirts using DTF printing technology"
                 className="w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
               />
@@ -150,7 +150,7 @@ const TShirts = () => {
             <div className="animate-in">
               <img
                 src="/Daphne Gator New 2026.webp"
-                alt="T-Shirt Printing - Gator Grafix"
+                alt="Daphne Gator presenting high-quality custom apparel and t-shirt printing services"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#FFF212]"
                 loading="lazy"
               />
@@ -267,7 +267,7 @@ const TShirts = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
             src="/Gator Grafix Logo New 2026.webp"
-            alt="Gator Grafix Logo"
+            alt="Gator Grafix logo - Pensacola's top provider of custom t-shirts, hoodies, and apparel"
             className="h-32 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
           />

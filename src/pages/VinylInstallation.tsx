@@ -1,14 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Phone, Check, AlertTriangle, Thermometer, Droplets, Sun, Wind } from 'lucide-react';
+import { ArrowRight, Phone, Check, AlertTriangle, Thermometer, Droplets, Sun, Wind, ChevronDown } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const VinylInstallation = () => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -98,12 +99,32 @@ const VinylInstallation = () => {
     { icon: Wind, title: 'Wind/Dust', desc: 'Choose a clean, sheltered area. Wind can blow debris onto the adhesive.' },
   ];
 
+  const faqs = [
+    {
+      question: "Can I use Windex to clean the surface?",
+      answer: "No, never use Windex or ammonia-based cleaners. They leave a residue behind that prevents the vinyl adhesive from properly sticking. Always use 70% or higher isopropyl alcohol."
+    },
+    {
+      question: "What do I do if I get a bubble while installing?",
+      answer: "If it's a small bubble, you can often push it towards the closest edge using your squeegee. If it's trapped, use a sharp razor blade or pin to carefully pop it and press the air out."
+    },
+    {
+      question: "Can I wash my car immediately after installing a decal?",
+      answer: "You should wait at least 48 hours before washing your vehicle. The adhesive needs time to fully cure and bond with the surface."
+    },
+    {
+      question: "Is it better to apply vinyl wet or dry?",
+      answer: "It depends on your experience and the size of the decal. Wet application (using a light mist of soapy water) is more forgiving as it allows you to reposition the vinyl easily. Dry application is faster but requires precision."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>How to Install Vinyl Decals & Wraps | Step-by-Step Guide – Gator Grafix</title>
+        <title>Vinyl Decal Installation Pensacola FL | Step-by-Step Guide – Gator Grafix</title>
         <meta name="description" content="Free step-by-step vinyl decal installation guide from Gator Grafix in Pensacola, FL. Learn the tools needed, ideal conditions, and pro tips for a perfect installation." />
         <link rel="canonical" href="https://signgator.com/vinyl-installation" />
+        <meta name="keywords" content="vinyl decal installation, vinyl wraps, Pensacola FL, Gator Grafix, install vinyl graphics, step by step guide" />
         <script type="application/ld+json">{`${JSON.stringify({
           "@context": "https://schema.org",
           "@type": "HowTo",
@@ -125,6 +146,15 @@ const VinylInstallation = () => {
             { "@type": "HowToStep", "name": "Final Touches", "text": "Use a heat gun to conform vinyl to curves, trim excess, and wipe clean." }
           ]
         })}`}</script>
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+          }))
+        })}`}</script>
       </Helmet>
       {/* Hero */}
       <section className="bg-gradient-to-br from-gator-green to-green-700 py-16 relative overflow-hidden">
@@ -140,7 +170,7 @@ const VinylInstallation = () => {
                 DIY Guide
               </span>
               <h1 className="font-display text-5xl md:text-6xl uppercase text-white drop-shadow-[4px_4px_0_#000] mb-6">
-                Vinyl Installation Guide
+                Vinyl Decal Installation Guide
               </h1>
               <p className="text-xl text-white font-bold mb-8">
                 Follow our step-by-step instructions to install your vinyl graphics like a pro!
@@ -166,7 +196,7 @@ const VinylInstallation = () => {
             <div className="relative">
               <img
                 src="/Billy and Daphne Gator holding Wrap tools.webp"
-                alt="Vinyl Installation Tools - Gator Grafix"
+                alt="Billy and Daphne Gator showing the squeegee and heat gun tools needed for vinyl decal installation"
                 className="w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
               />
@@ -191,7 +221,7 @@ const VinylInstallation = () => {
           <div className="infographic-parallax relative">
             <img
               src="/how-to-install-cut-vinyl-decals-instructions-infographic.webp"
-              alt="How to Install Cut Vinyl Decals - Step by Step Instructions from Gator Grafix"
+              alt="Step-by-step infographic guide on how to install cut vinyl decals and graphics perfectly"
               className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#000]"
               loading="lazy"
             />
@@ -304,12 +334,53 @@ const VinylInstallation = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-gator-green text-white px-4 py-2 font-display text-sm uppercase mb-4 border-3 border-black rounded-xl shadow-[4px_4px_0_#000]">
+              Got Questions?
+            </span>
+            <h2 className="section-title text-gator-green mb-4">Installation FAQs</h2>
+            <p className="text-lg text-gray-700 font-bold">
+              Common questions about installing vinyl decals
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="border-3 border-black rounded-2xl overflow-hidden shadow-[6px_6px_0_#000] transition-all hover:shadow-[8px_8px_0_#45B653]"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-5 bg-white hover:bg-gator-yellow/20 transition-colors text-left"
+                >
+                  <span className="font-display text-lg uppercase pr-4">{faq.question}</span>
+                  <ChevronDown
+                    className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${openFaq === index ? 'max-h-96' : 'max-h-0'}`}
+                >
+                  <div className="p-5 pt-0 bg-white border-t-2 border-gray-100">
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 gator-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
             src="/Gator Grafix Logo New 2026.webp"
-            alt="Gator Grafix Logo"
+            alt="Gator Grafix logo - The best sign shop for vinyl decal installation in Pensacola, FL"
             className="h-32 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
           />

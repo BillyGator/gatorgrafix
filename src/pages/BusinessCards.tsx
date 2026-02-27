@@ -130,7 +130,7 @@ const BusinessCards = () => {
             <div className="relative">
               <img
                 src="/Daphne-Gator-B-Cards.webp"
-                alt="Business Cards - Gator Grafix"
+                alt="Daphne Gator presenting a stack of professional custom printed business cards"
                 className="w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
               />
@@ -175,7 +175,7 @@ const BusinessCards = () => {
             <div className="animate-in">
               <img
                 src="/daphne-gator-custom-graphic-design-logo-services.webp"
-                alt="Design Services - Gator Grafix"
+                alt="Daphne Gator offering custom graphic design services for business cards and marketing materials"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#3B82F6]"
                 loading="lazy"
               />
@@ -270,7 +270,7 @@ const BusinessCards = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
             src="/Billy and Daphne Gator holding Wrap tools.webp"
-            alt="Gator Grafix Mascots"
+            alt="Billy and Daphne Gator holding vehicle wrap tools, representing Gator Grafix high-quality services"
             className="h-44 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)] rounded-2xl"
             loading="lazy"
           />

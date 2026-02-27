@@ -155,7 +155,7 @@ const VehicleWraps = () => {
             <div className="relative">
               <img
                 src="/Gator-Blue-Jeep-Wrap copy.webp"
-                alt="Vehicle Wraps - Gator Grafix"
+                alt="Custom blue camo full vehicle wrap installed on a Jeep Wrangler by Gator Grafix in Pensacola, FL"
                 className="parallax-hero-img w-full drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)] rounded-2xl"
                 loading="eager"
               />
@@ -172,7 +172,7 @@ const VehicleWraps = () => {
             <div className="animate-in">
               <img
                 src="/Billy Gator Orange Camo Jeep Gladiator.webp"
-                alt="Vehicle Wrap Services - Billy Gator"
+                alt="Billy Gator mascot standing in front of a custom wrapped orange camo Jeep Gladiator"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#C90010]"
                 loading="lazy"
               />
@@ -197,13 +197,21 @@ const VehicleWraps = () => {
                 ))}
               </div>
 
-              <Link
-                to="/contact"
-                className="gator-btn inline-flex items-center gap-2"
-              >
-                Request a Quote
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <Link
+                  to="/contact"
+                  className="gator-btn inline-flex items-center justify-center gap-2"
+                >
+                  Request a Quote
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  to="/vinyl-installation"
+                  className="px-6 py-3 font-display uppercase tracking-wide bg-white text-black border-3 border-black rounded-xl shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#C90010] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+                >
+                  DIY Install Guide
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -313,7 +321,7 @@ const VehicleWraps = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
             src="/Gator Grafix Billy Gator 2026.webp"
-            alt="Billy Gator - Gator Grafix Mascot"
+            alt="Billy Gator mascot representing Gator Grafix vehicle wrap services in Pensacola, FL"
             className="h-44 mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
           />

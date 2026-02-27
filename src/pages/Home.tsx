@@ -1,9 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Phone, ArrowRight, Star, Clock, Award, Check, Car, Signpost, Shirt, CreditCard } from 'lucide-react';
+import { Phone, ArrowRight, Star, Clock, Award, Check, Car, Signpost, Shirt, CreditCard, ChevronDown } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -177,12 +177,110 @@ const Home = () => {
     { icon: Check, title: '100% Satisfaction', desc: 'We stand behind every product we make.' },
   ];
 
+  const faqs = [
+    {
+      question: "Where are you located?",
+      answer: "We are proudly located at 8447 Pensacola Blvd, Pensacola, FL 32534. Stop by our shop during business hours to see material samples and chat with our design team!"
+    },
+    {
+      question: "Do you offer the lowest prices in Pensacola?",
+      answer: "Yes! We guarantee the lowest prices on the entire Gulf Coast for custom signs, banners, vehicle wraps, and apparel printing, without ever sacrificing quality."
+    },
+    {
+      question: "How long does a vehicle wrap take?",
+      answer: "Most full vehicle wraps are completed in 3-5 business days after the final design is approved. This gives us time to properly prep the vehicle, install the vinyl, and perform a quality check."
+    },
+    {
+      question: "Do you require minimum orders for t-shirts?",
+      answer: "Not at all! With our advanced DTF (Direct to Film) printing technology, we can print as few as one single t-shirt, or fulfill bulk orders for hundreds of shirts. No minimums required!"
+    },
+    {
+      question: "Do you design the signs and wraps for me?",
+      answer: "Absolutely. We have an expert in-house design team that can bring your vision to life from scratch or work with your existing logo and branding."
+    }
+  ];
+
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <div ref={container} className="overflow-hidden">
       <Helmet>
         <title>Gator Grafix | Signs, Wraps &amp; Apparel – Pensacola, FL</title>
         <meta name="description" content="Pensacola's most fun sign shop! Guaranteed lowest prices on custom signs, vehicle wraps, DTF t-shirts & business cards. Family owned since 2005. Call (850) 478-0486." />
         <link rel="canonical" href="https://signgator.com/" />
+
+        {/* Open Graph Tags for Social Media and AEO Preview parsing */}
+        <meta property="og:title" content="Gator Grafix | Signs, Wraps & Apparel – Pensacola, FL" />
+        <meta property="og:description" content="Pensacola's most fun sign shop! Guaranteed lowest prices on custom signs, vehicle wraps, DTF t-shirts & business cards. Family owned since 2005." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://signgator.com/" />
+        <meta property="og:image" content="https://signgator.com/og-share.png" />
+        <meta property="og:site_name" content="Gator Grafix" />
+
+        {/* Structured Data / Schema Markup for Answer Engines & SEO */}
+        <script type="application/ld+json">{`${JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://signgator.com/#website",
+              "url": "https://signgator.com/",
+              "name": "Gator Grafix",
+              "description": "Pensacola's most fun sign shop! Custom signs, vehicle wraps, DTF t-shirts & business cards.",
+              "publisher": { "@id": "https://signgator.com/#organization" }
+            },
+            {
+              "@type": "LocalBusiness",
+              "@id": "https://signgator.com/#organization",
+              "name": "Gator Grafix",
+              "url": "https://signgator.com/",
+              "logo": "https://signgator.com/logo.png",
+              "image": "https://signgator.com/Billy%20and%20Daphne%20Gator%20holding%20Wrap%20tools.webp",
+              "description": "Family-owned sign shop in Pensacola, Florida specializing in vehicle wraps, custom signs, banners, and t-shirt printing. Lowest prices guaranteed.",
+              "telephone": "+18504780486",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8447 Pensacola Blvd",
+                "addressLocality": "Pensacola",
+                "addressRegion": "FL",
+                "postalCode": "32534",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 30.528,
+                "longitude": -87.266
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "08:00",
+                  "closes": "17:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "09:00",
+                  "closes": "14:00"
+                }
+              ],
+              "priceRange": "$$"
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://signgator.com/#faq",
+              "mainEntity": faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              }))
+            }
+          ]
+        })}`}</script>
       </Helmet>
       {/* Hero Section - Reduced padding */}
       <section ref={heroRef} className="relative min-h-[85vh] gator-gradient overflow-hidden">
@@ -208,7 +306,7 @@ const Home = () => {
               </h1>
 
               <p className="hero-text text-lg md:text-xl text-black font-bold mb-8 max-w-xl mx-auto lg:mx-0">
-                Gator Grafix makes your brand <span className="text-gator-red">SNAP</span> with custom signs, vehicle wraps, and apparel.
+                Gator Grafix makes your brand <span className="text-gator-red">SNAP</span> with <Link to="/services/signs-banners" className="hover:text-gator-red underline decoration-2 underline-offset-2">custom signs</Link>, <Link to="/services/vehicle-wraps" className="hover:text-gator-red underline decoration-2 underline-offset-2">vehicle wraps</Link>, and <Link to="/services/t-shirts" className="hover:text-gator-red underline decoration-2 underline-offset-2">apparel</Link>.
                 <span className="block mt-2 text-gator-red font-display text-xl">Lowest prices guaranteed on the entire Gulf Coast!</span>
               </p>
 
@@ -251,7 +349,7 @@ const Home = () => {
               <div className="parallax-mascot hero-mascot relative">
                 <img
                   src="/Billy and Daphne Gator holding Wrap tools.webp"
-                  alt="Billy & Daphne Gator - Gator Grafix Mascots"
+                  alt="Billy and Daphne Gator - Official mascots of Gator Grafix sign shop in Pensacola, Florida"
                   className="w-full max-w-lg lg:max-w-xl drop-shadow-[12px_12px_0_rgba(0,0,0,0.3)]"
                   loading="eager"
                   width={600}
@@ -286,7 +384,7 @@ const Home = () => {
             </span>
             <h2 className="section-title text-gator-green mb-4">Our Services</h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto font-bold">
-              From wraps to shirts, if you can imagine it, we can print it!
+              From <Link to="/services/vehicle-wraps" className="text-gator-green hover:text-black underline decoration-2 underline-offset-2">wraps</Link> to <Link to="/services/t-shirts" className="text-gator-green hover:text-black underline decoration-2 underline-offset-2">shirts</Link>, if you can imagine it, we can print it!
             </p>
           </div>
 
@@ -385,7 +483,7 @@ const Home = () => {
             <div className="about-image relative">
               <img
                 src="/Billy & Daphne Gator In Front of Building.webp"
-                alt="Gator Grafix Building in Pensacola"
+                alt="Gator Grafix store building located at 8447 Pensacola Blvd in Pensacola, FL"
                 className="w-full rounded-2xl border-3 border-black shadow-[12px_12px_0_#000]"
                 loading="lazy"
                 width={800}
@@ -419,7 +517,7 @@ const Home = () => {
           <div className="parallax-truck mt-4 lg:mt-10 flex justify-center w-full px-4 lg:px-8">
             <img
               src="/Jeep_Gladiator_GatorGrafix_Jeep_wrap.webp"
-              alt="Gator Grafix custom Jeep Gladiator full vehicle wrap in Pensacola FL"
+              alt="Custom orange camo vehicle wrap on a Jeep Gladiator installed by Gator Grafix in Pensacola, FL"
               className="w-full max-w-5xl lg:max-w-6xl drop-shadow-[16px_16px_0_rgba(0,0,0,0.8)]"
               width={1200}
               height={800}
@@ -441,12 +539,53 @@ const Home = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-gator-green text-white px-4 py-2 font-display text-sm uppercase mb-4 border-3 border-black rounded-xl shadow-[4px_4px_0_#000]">
+              Got Questions?
+            </span>
+            <h2 className="section-title text-gator-green mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-700 font-bold">
+              Everything you need to know about working with Gator Grafix
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="border-3 border-black rounded-2xl overflow-hidden shadow-[6px_6px_0_#000] transition-all hover:shadow-[8px_8px_0_#45B653]"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-5 bg-white hover:bg-gator-yellow/20 transition-colors text-left"
+                >
+                  <span className="font-display text-lg uppercase pr-4">{faq.question}</span>
+                  <ChevronDown
+                    className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${openFaq === index ? 'max-h-96' : 'max-h-0'}`}
+                >
+                  <div className="p-5 pt-0 bg-white border-t-2 border-gray-100">
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 gator-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
             src="/GatorLowestPrices.webp"
-            alt="Lowest Prices Guaranteed - Gator Grafix"
+            alt="Lowest Prices Guaranteed badge from Gator Grafix for signs, clothing, and wraps in Pensacola"
             className="h-40 w-auto mx-auto mb-8 drop-shadow-[8px_8px_0_rgba(0,0,0,0.3)]"
             loading="lazy"
             height={160}
