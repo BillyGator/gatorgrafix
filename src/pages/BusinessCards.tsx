@@ -126,6 +126,15 @@ const BusinessCards = () => {
                   (850) 478-0486
                 </a>
               </div>
+              <a
+                href="https://www.google.com/search?q=Gator+Grafix+Pensacola+reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white px-4 py-2.5 border-3 border-black rounded-xl shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#45B653] transition-all mt-4 w-fit"
+              >
+                <Star className="w-4 h-4 text-gator-yellow fill-gator-yellow" />
+                <span className="font-display text-sm">★★★★★ 100+ Google Reviews</span>
+              </a>
             </div>
             <div className="relative">
               <img

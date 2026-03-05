@@ -12,6 +12,7 @@ import SignsBanners from './pages/SignsBanners';
 import TShirts from './pages/TShirts';
 import BusinessCards from './pages/BusinessCards';
 import VinylInstallation from './pages/VinylInstallation';
+import CustomTShirtsPensacola from './pages/CustomTShirtsPensacola';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="services/vehicle-wraps" element={<VehicleWraps />} />
           <Route path="services/signs-banners" element={<SignsBanners />} />
           <Route path="services/t-shirts" element={<TShirts />} />
+          <Route path="services/custom-t-shirts-pensacola" element={<CustomTShirtsPensacola />} />
           <Route path="services/business-cards" element={<BusinessCards />} />
           <Route path="vinyl-installation" element={<VinylInstallation />} />
           <Route path="contact" element={<Contact />} />

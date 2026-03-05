@@ -20,6 +20,7 @@ const Contact = () => {
     email: '',
     phone: '',
     service: '',
+    deadline: '',
     message: ''
   });
 
@@ -58,7 +59,7 @@ const Contact = () => {
           console.log(result.text);
           setFormSubmitted(true);
           setIsSending(false);
-          setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+          setFormData({ name: '', email: '', phone: '', service: '', deadline: '', message: '' });
 
           setTimeout(() => {
             setFormSubmitted(false);
@@ -237,7 +238,18 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block font-display uppercase text-sm mb-1">Message *</label>
+                      <label className="block font-display uppercase text-sm mb-1">Target Completion Date</label>
+                      <input
+                        type="date"
+                        name="deadline"
+                        value={formData.deadline}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border-3 border-black rounded-xl focus:outline-none focus:shadow-[4px_4px_0_#45B653] transition-shadow bg-white"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block font-display uppercase text-sm mb-1">Project Description *</label>
                       <textarea
                         name="message"
                         value={formData.message}
@@ -245,7 +257,7 @@ const Contact = () => {
                         required
                         rows={4}
                         className="w-full px-4 py-3 border-3 border-black rounded-xl focus:outline-none focus:shadow-[4px_4px_0_#45B653] transition-shadow resize-none"
-                        placeholder="Tell us about your project..."
+                        placeholder="Tell us about your project — quantity, size, colors, any design ideas..."
                       />
                     </div>
 

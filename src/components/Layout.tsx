@@ -253,11 +253,19 @@ const Layout = () => {
             </div>
           </div>
 
-          {/* Bottom Bar */}
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm text-center md:text-left">
-              © 2025 Gator Grafix / SignGator.com. All rights reserved.
-            </p>
+          {/* Trust Bar */}
+          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+            <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start">
+              <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg border border-gray-700">
+                <svg className="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l6 2.67V11c0 3.88-2.67 7.52-6 8.93-3.33-1.41-6-5.05-6-8.93V7.67L12 5z"/></svg>
+                <span className="text-gray-300 text-xs font-display uppercase">BBB Accredited</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg border border-gray-700">
+                <svg className="w-4 h-4 text-gator-yellow" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span className="text-gray-300 text-xs font-display uppercase">★★★★★ 100 Google Reviews</span>
+              </div>
+              <span className="text-gray-500 text-xs">Est. 2005 · Family Owned · Pensacola, FL</span>
+            </div>
             <div className="flex items-center gap-2">
               <span className="text-gator-green font-display">Family Owned</span>
               <span className="text-gator-yellow">•</span>
@@ -265,6 +273,11 @@ const Layout = () => {
               <span className="text-gator-yellow">•</span>
               <span className="text-gator-green font-display">Since 2005</span>
             </div>
+          </div>
+          <div className="border-t border-gray-800 pt-4">
+            <p className="text-gray-500 text-sm text-center">
+              © 2026 Gator Grafix / SignGator.com. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

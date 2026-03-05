@@ -265,7 +265,14 @@ const Home = () => {
                   "closes": "14:00"
                 }
               ],
-              "priceRange": "$$"
+              "priceRange": "$$",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "100",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             },
             {
               "@type": "FAQPage",
@@ -299,16 +306,17 @@ const Home = () => {
                 Family Owned Since 2005
               </div>
 
-              <h1 className="hero-title font-display text-5xl md:text-6xl lg:text-7xl uppercase leading-none mb-6">
+              <h1 className="hero-title font-display text-5xl md:text-6xl lg:text-7xl uppercase leading-none mb-4">
                 <span className="block text-white drop-shadow-[4px_4px_0_#000]">Pensacola's</span>
-                <span className="block text-gator-yellow drop-shadow-[4px_4px_0_#000] text-stroke">Most Fun</span>
+                <span className="block text-gator-yellow drop-shadow-[4px_4px_0_#000] text-stroke">Lowest-Price</span>
                 <span className="block text-gator-red drop-shadow-[4px_4px_0_#000]">Sign Shop!</span>
               </h1>
 
-              <p className="hero-text text-lg md:text-xl text-black font-bold mb-8 max-w-xl mx-auto lg:mx-0">
-                Gator Grafix makes your brand <span className="text-gator-red">SNAP</span> with <Link to="/services/signs-banners" className="hover:text-gator-red underline decoration-2 underline-offset-2">custom signs</Link>, <Link to="/services/vehicle-wraps" className="hover:text-gator-red underline decoration-2 underline-offset-2">vehicle wraps</Link>, and <Link to="/services/t-shirts" className="hover:text-gator-red underline decoration-2 underline-offset-2">apparel</Link>.
-                <span className="block mt-2 text-gator-red font-display text-xl">Lowest prices guaranteed on the entire Gulf Coast!</span>
-              </p>
+              <div className="hero-text mb-8 max-w-xl mx-auto lg:mx-0">
+                <p className="text-lg md:text-xl text-black font-bold">
+                  <span className="text-gator-red font-display text-xl">Guaranteed.</span> Custom <Link to="/services/signs-banners" className="hover:text-gator-red underline decoration-2 underline-offset-2">signs</Link>, <Link to="/services/vehicle-wraps" className="hover:text-gator-red underline decoration-2 underline-offset-2">vehicle wraps</Link>, and <Link to="/services/t-shirts" className="hover:text-gator-red underline decoration-2 underline-offset-2">apparel</Link> — the best prices on the Gulf Coast, backed by 100 five-star reviews and 21 years of family ownership.
+                </p>
+              </div>
 
               <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
@@ -337,10 +345,21 @@ const Home = () => {
                   <Clock className="w-5 h-5 text-gator-green" />
                   <span className="font-display text-sm">Fast Turnaround</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white px-4 py-2.5 border-3 border-black rounded-xl shadow-[4px_4px_0_#000]">
+                <a
+                  href="https://www.google.com/search?q=Gator+Grafix+Pensacola+reviews"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-white px-4 py-2.5 border-3 border-black rounded-xl shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#45B653] transition-all"
+                >
                   <Star className="w-5 h-5 text-gator-yellow fill-gator-yellow" />
-                  <span className="font-display text-sm">5-Star Rated</span>
-                </div>
+                  <span className="font-display text-sm">★★★★★ 100+ Google Reviews</span>
+                </a>
+              </div>
+
+              {/* Business Hours */}
+              <div className="flex items-center gap-2 bg-white/90 px-4 py-2.5 border-3 border-black rounded-xl shadow-[4px_4px_0_#000] w-fit">
+                <Clock className="w-5 h-5 text-gator-green" />
+                <span className="font-display text-sm">Mon–Fri 8am–5pm · Sat 9am–2pm · Walk-ins Welcome!</span>
               </div>
             </div>
 
@@ -431,6 +450,72 @@ const Home = () => {
               View All Services
               <ArrowRight className="w-5 h-5" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-gator-green">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-gator-yellow text-black px-4 py-2 font-display text-sm uppercase mb-4 border-3 border-black rounded-xl shadow-[4px_4px_0_#000]">
+              Real Customers
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl uppercase text-white drop-shadow-[4px_4px_0_rgba(0,0,0,0.3)] mb-2">
+              ★★★★★ 100 Five-Star Reviews
+            </h2>
+            <a
+              href="https://www.google.com/search?q=Gator+Grafix+Pensacola+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-bold text-gator-yellow underline hover:text-white transition-colors"
+            >
+              Read all reviews on Google →
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: "They wrapped my Jeep in two days and it came out absolutely incredible. Best price I could find in all of Pensacola — no contest.",
+                name: "J.D.",
+                city: "Pensacola"
+              },
+              {
+                quote: "Ordered custom t-shirts for our whole team with no minimum order. Quick turnaround, great quality, and super affordable. We'll be back!",
+                name: "Maria T.",
+                city: "Gulf Breeze"
+              },
+              {
+                quote: "Our business signs look amazing. Billy and Daphne were super helpful from design to install. Prices were unbeatable and done ahead of schedule.",
+                name: "Carlos R.",
+                city: "Pensacola"
+              }
+            ].map((review, i) => (
+              <div key={i} className="bg-white p-6 border-3 border-black rounded-2xl shadow-[8px_8px_0_#000] flex flex-col">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, s) => (
+                    <Star key={s} className="w-5 h-5 text-gator-yellow fill-gator-yellow" />
+                  ))}
+                </div>
+                <p className="text-gray-700 flex-1 mb-4 italic">"{review.quote}"</p>
+                <div className="font-display text-sm uppercase">
+                  — {review.name}, <span className="text-gator-green">{review.city}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="https://www.google.com/search?q=Gator+Grafix+Pensacola+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gator-yellow text-black px-8 py-4 font-display text-lg uppercase border-3 border-black rounded-xl shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
+            >
+              <Star className="w-5 h-5 fill-black" />
+              See All 100 Reviews on Google
+            </a>
           </div>
         </div>
       </section>

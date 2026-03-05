@@ -55,12 +55,13 @@ const About = () => {
   }, []);
 
   const timeline = [
-    { year: '2005', title: 'Gator Grafix Founded', desc: 'Established in Pensacola, Florida as a small family-owned business dedicated to quality printing services.' },
-    { year: '2007', title: 'Expansion of Services', desc: <>Introduced <Link to="/services/t-shirts" className="font-bold hover:text-gator-red underline decoration-2 underline-offset-2">custom apparel</Link> and <Link to="/services/vehicle-wraps" className="font-bold hover:text-gator-red underline decoration-2 underline-offset-2">vehicle wraps</Link>, broadening our service offerings.</> },
-    { year: '2008', title: 'New Facility', desc: 'Moved to a larger facility to accommodate advanced printing technology.' },
-    { year: '2020', title: 'Digital Transformation', desc: 'Implemented state-of-the-art eco-friendly latex digital printing technology.' },
-    { year: '2022', title: 'Direct to Film Printing', desc: 'Added the area\'s first commercial direct to film printer for apparel.' },
-    { year: '2025', title: 'AI Integration', desc: 'Integrating AI into our creative process for cutting-edge designs.' },
+    { year: '2005', title: 'Gator Grafix Founded', desc: 'Billy launched Gator Grafix with a bet on the future. While most sign shops were still cutting single-color vinyl, Billy invested in full-color digital printing — believing he could bring professional color signage to Pensacola at the same price as one-color signs. He was right.' },
+    { year: '2006', title: 'First Certified Wrap Installer in Pensacola', desc: 'Gator Grafix became the first shop in Pensacola to earn professional vehicle wrap installation certification — before most local shops even knew wraps were a thing.' },
+    { year: '2007', title: 'First Direct-to-Garment Printer in Pensacola', desc: 'When full-color printing directly onto t-shirts was still a novelty, Billy brought the first DTG printer to Pensacola. Suddenly, any design, any color, any quantity was possible — no screens, no setup fees, no minimums.' },
+    { year: '2008', title: 'First Latex Printer in Pensacola', desc: 'Billy brought the area\'s first latex printer to Pensacola. Latex ink stretches around curves without cracking — a game-changer for vehicle wraps. More consistent colors, better durability, and results the competition simply couldn\'t match.' },
+    { year: '2022', title: 'First Industrial DTF Printer in the Region', desc: 'After experimenting with DTF technology for over a year, Gator Grafix brought the first industrial-size DTF printer to the Gulf Coast. Faster, more durable, and even more versatile than DTG — another Pensacola first.' },
+    { year: '2025', title: 'AI-Powered Design & Automation', desc: 'Gator Grafix integrated AI into the design process and shop automation — faster proofs, smarter workflows, and cutting-edge creative tools that help customers get from idea to finished product quicker than ever.' },
+    { year: '2026', title: 'Still First. Still Family.', desc: 'Twenty-one years in, Billy and Daphne are still here. Still on the leading edge of every new technology. Still personally invested in every customer\'s project. The equipment has changed — the commitment hasn\'t.' },
   ];
 
   const values = [
@@ -74,7 +75,7 @@ const About = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>About Us | Gator Grafix – Family Owned Sign Shop Since 2005</title>
-        <meta name="description" content="Learn about Gator Grafix, Pensacola's most fun sign shop. Family owned & operated since 2005 by Billy & Daphne Gator. 20+ years of experience, 10,000+ happy customers." />
+        <meta name="description" content="Gator Grafix has been Pensacola's technology leader in signs, vehicle wraps & apparel printing since 2005. Family owned by Billy & Daphne — first certified wrap installer, first DTF printer, and first in the region for every major printing technology." />
         <link rel="canonical" href="https://signgator.com/about" />
         <script type="application/ld+json">{`${JSON.stringify({
           "@context": "https://schema.org",
@@ -112,11 +113,15 @@ const About = () => {
                 Our Story
               </span>
               <h1 className="font-display text-5xl md:text-6xl uppercase text-black drop-shadow-[4px_4px_0_#fff] mb-6">
-                The Gator Grafix Family
+                Meet the Family Behind Pensacola's Most Fun Sign Shop
               </h1>
-              <p className="text-xl text-black font-bold mb-8">
-                Founded in 2005, Gator Grafix is a proud family-owned business rooted in Pensacola, Florida.
-                Our commitment to quality and customer satisfaction has made us the go-to <Link to="/services/signs-banners" className="text-gator-red hover:text-white underline decoration-2 underline-offset-2">sign shop</Link> on the Gulf Coast.
+              <p className="text-xl text-black font-bold mb-4">
+                Billy and Daphne have been building Gator Grafix since 2005 — and every step of the way,
+                they've been the first to bring new printing technology to Pensacola.
+              </p>
+              <p className="text-black mb-8">
+                Vehicle wraps. Latex printing. Direct-to-garment. DTF apparel. When new technology hits the industry,
+                Gator Grafix brings it to the Gulf Coast — so you get better results at prices nobody else can match.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -152,10 +157,10 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '20+', label: 'Years Experience' },
+              { number: '21', label: 'Years in Business' },
+              { number: '5+', label: 'Pensacola Firsts' },
+              { number: '100', label: '5-Star Reviews' },
               { number: '10K+', label: 'Happy Customers' },
-              { number: '100%', label: 'Satisfaction' },
-              { number: '#1', label: 'In Pensacola' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="font-display text-5xl md:text-6xl text-white drop-shadow-[3px_3px_0_#000]">{stat.number}</div>
@@ -179,23 +184,26 @@ const About = () => {
               />
             </div>
             <div className="animate-in">
-              <h2 className="section-title text-gator-green mb-6">Who We Are</h2>
+              <h2 className="section-title text-gator-green mb-6">How It All Started</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Gator Grafix began as a small family dream in 2005. What started as a humble sign shop
-                has grown into one of the most trusted printing companies on the Gulf Coast.
+                In 2005, most sign shops in Pensacola were doing the same thing — cutting single-color vinyl.
+                Full-color digital printing existed, but it was expensive, and nobody was making it accessible.
+                Billy saw that was about to change.
               </p>
               <p className="text-gray-700 mb-6">
-                We take pride in our ability to deliver exceptional products that reflect our clients' visions,
-                all while maintaining the personal touch that only a family-operated company can offer.
+                He invested in digital printing technology before it was mainstream, bet that he could drive the cost down,
+                and made full-color signs available to Pensacola businesses at the same price as the old one-color jobs.
+                It worked — and it set the pattern for everything that came after.
               </p>
               <p className="text-gray-700 mb-8">
-                Our team of skilled designers and installers are passionate about what they do, and it shows
-                in every project we complete. From small <Link to="/services/business-cards" className="text-gator-green hover:text-black font-bold underline decoration-2 underline-offset-2">business cards</Link> to full <Link to="/services/vehicle-wraps" className="text-gator-green hover:text-black font-bold underline decoration-2 underline-offset-2">vehicle wraps</Link>, we put the same
-                level of care and attention into every job.
+                Every time a major technology shift hit the printing industry — latex inks for <Link to="/services/vehicle-wraps" className="text-gator-green hover:text-black font-bold underline decoration-2 underline-offset-2">vehicle wraps</Link>, direct-to-garment
+                for <Link to="/services/t-shirts" className="text-gator-green hover:text-black font-bold underline decoration-2 underline-offset-2">apparel printing</Link>, DTF for no-minimum custom shirts — Gator Grafix was first in Pensacola.
+                Not because it was easy, but because Billy genuinely believes the best technology should be available
+                to every local business owner, not just the ones who can afford big-city prices.
               </p>
               <div className="bg-gator-yellow p-6 border-3 border-black rounded-2xl shadow-[6px_6px_0_#000]">
                 <p className="font-display text-xl text-center">
-                  "If you can imagine it, we can print it!"
+                  "Our business is to help your business make more money."
                 </p>
               </div>
             </div>
@@ -259,7 +267,7 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="section-title text-gator-red mb-4">Meet the Gators</h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Our friendly mascots represent the fun, professional service you'll receive at Gator Grafix.
+              Behind every sign, wrap, and shirt is a real family who cares about your project.
             </p>
           </div>
 
@@ -267,22 +275,30 @@ const About = () => {
             <div className="bg-gator-yellow p-8 border-3 border-black rounded-2xl shadow-[8px_8px_0_#000] text-center hover:shadow-[12px_12px_0_#C90010] hover:-translate-x-1 hover:-translate-y-1 transition-all">
               <img
                 src="/Gator Grafix Billy Gator 2026.webp"
-                alt="Billy Gator mascot showing the professional service provided by Gator Grafix in Pensacola"
+                alt="Billy Gator - founder of Gator Grafix, Pensacola's first certified vehicle wrap installer"
                 className="h-44 mx-auto mb-4"
                 loading="lazy"
               />
-              <h3 className="font-display text-2xl uppercase mb-2">Billy Gator</h3>
-              <p className="text-gray-700">The boss gator who makes sure every job is done right!</p>
+              <h3 className="font-display text-2xl uppercase mb-2">Billy</h3>
+              <p className="text-gray-700 font-bold mb-2">Founder · Technology Pioneer</p>
+              <p className="text-gray-600 text-sm">
+                The guy who saw digital printing was the future before anyone else in Pensacola did —
+                and has been first to bring every major technology to the Gulf Coast ever since.
+              </p>
             </div>
             <div className="bg-gator-green p-8 border-3 border-black rounded-2xl shadow-[8px_8px_0_#000] text-center hover:shadow-[12px_12px_0_#FFF212] hover:-translate-x-1 hover:-translate-y-1 transition-all">
               <img
                 src="/Daphne Gator New 2026.webp"
-                alt="Daphne Gator mascot representing the creative design team at Gator Grafix"
+                alt="Daphne Gator - co-founder and lead designer at Gator Grafix in Pensacola, FL"
                 className="h-44 mx-auto mb-4"
                 loading="lazy"
               />
-              <h3 className="font-display text-2xl uppercase text-white mb-2">Daphne Gator</h3>
-              <p className="text-white/80">The creative gator who brings your designs to life!</p>
+              <h3 className="font-display text-2xl uppercase text-white mb-2">Daphne</h3>
+              <p className="text-white font-bold mb-2">Co-Founder · Lead Designer</p>
+              <p className="text-white/80 text-sm">
+                Daphne has been designing signs and bringing customers' visions to life since day one.
+                The creative force behind Gator Grafix's work — and the reason every project looks great.
+              </p>
             </div>
           </div>
         </div>
